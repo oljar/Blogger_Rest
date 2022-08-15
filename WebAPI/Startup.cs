@@ -1,3 +1,8 @@
+using Application.Interfaces;
+using Application.Mappings;
+using Application.Services;
+using Domain.Interfaces;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +30,27 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IPostRepository, PostRepository>();
+            /*
+             Dzêki temu framework ASP.net Core  bêdzie wiedzia³ ¿e jeœli gdziekolwiek na wejœciu np.w parametrze konstruktora
+             dotanie interfejs IPostRepository to automatycznie przypisze implementacje klasy PostRepository. 
+
+             */
+            services.AddScoped<IPostService, PostService>();
+
+
+            /* 
+             Metoda AddSingleton zapewni nam ¿e implementacja interfejsu  bêdzie tworzona tylko jeden raz na samym pocz¹tku
+             jako argument przekazujemy instancjê konfiguracji automappera. 
+             Framework Asp.Net Core bêdzie wiedzia³ ¿e jeœli gdziekolwiek  na wejœciu np w parametrze kostruktora dostanie 
+             interfejs IMapper to wstrzyknie implementacjê pochodz¹c¹ z klasy AutoMapperConfig.
+             */
+
+            services.AddSingleton(AutoMapperConfig.Initialize());
+
+
             services.AddControllers();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

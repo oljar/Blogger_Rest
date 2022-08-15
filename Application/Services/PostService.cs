@@ -1,5 +1,6 @@
 ﻿using Application.Dto;
 using Application.Interfaces;
+using AutoMapper;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,34 +12,29 @@ namespace Application.Services
     public class PostService : IPostService
     {
         private readonly IPostRepository _postRepository;
-
-        public PostService(IPostRepository postRepository )
-        {
+        private readonly IMapper _mapper;   // dodać pole prywatne
+       
+        public PostService(IPostRepository postRepository, IMapper mapper)  //należy dodać drugi parametr IMapper
+        { 
             _postRepository = postRepository;
+            _mapper = mapper;       //  tworzymy pole w kostruktorze o typie IMapper
+
+
         }
         public IEnumerable<PostDto> GetAllPosts()
         {
             var posts = _postRepository.GetAll();
-            return posts.Select(posts => new PostDto
-            {
-                Id = posts.Id,
-                Title = posts.Title,
-                Content = posts.Content
-
-            });
+            return _mapper.Map<IEnumerable<PostDto>>(posts);
+       
         }
 
         public PostDto GetPostById(int id)
         {
             var post = _postRepository.GetById(id);
-            return new PostDto()
-            {
-                Id = post.Id,
-                Title = post.Title,
-                Content = post.Content
+            return _mapper.Map<PostDto>(post); 
+            // wywołuję metodę Map z interfejsu IMapper - Typ zwrócony PostDto, argument  metody zmienna post
 
 
-            };
         }
     }
 }
