@@ -15,7 +15,7 @@ namespace Domain.Interfaces
         /// Metoda odpowiedzialna za pobieranie wszystkich postów
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Post> GetAll(); 
+       public  IEnumerable<Post> GetAll(); 
         
         
         /// <summary>
