@@ -35,9 +35,9 @@ namespace Infrastructure.Repositories
             post.Created = DateTime.UtcNow;
             _posts.Add(post);
             return post;
+
             // zwracamy nowododany post
         }
-
 
         public void Update(Post post)
         {

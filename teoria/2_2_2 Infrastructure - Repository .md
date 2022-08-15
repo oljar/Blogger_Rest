@@ -3,7 +3,3 @@
 	  Repozytorium jest odpowiedzialne za zapis i odczyt postów.  
 	  Tworzymy now¹ kolekcjê postów i inicjalizujemy j¹ trzema postami. 
 
-
-
-
-

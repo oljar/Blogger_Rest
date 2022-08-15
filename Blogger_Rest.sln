@@ -8,9 +8,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teoria", "teoria", "{BAE21B94-BFA8-4244-B572-FDEFF40E01D7}"
 	ProjectSection(SolutionItems) = preProject
 		teoria\1_5 Omówienie standardu REST.md = teoria\1_5 Omówienie standardu REST.md
-		teoria\2_2 Architektura aplikacji-teoria.md = teoria\2_2 Architektura aplikacji-teoria.md
 		teoria\2.2.1 Architektura aplikacji - Domain.md = teoria\2.2.1 Architektura aplikacji - Domain.md
+		teoria\2_2 Architektura aplikacji-teoria.md = teoria\2_2 Architektura aplikacji-teoria.md
 		teoria\2_2_2 Infrastructure - Repository .md = teoria\2_2_2 Infrastructure - Repository .md
+		2_3_1 Application - Interfaces.md = 2_3_1 Application - Interfaces.md
+		2_3_2 Application  - Services - MAPOWANIE RĘCZNE .md = 2_3_2 Application  - Services - MAPOWANIE RĘCZNE .md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6BA35FF4-17D0-4337-8A77-AB4E685E2CF0}"
