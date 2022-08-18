@@ -22,5 +22,11 @@ namespace Application.Interfaces
         /// <returns></returns>
 
         PostDto GetPostById(int id); // Podmiana typu z Post na PostDto
+
+
+
+        PostDto AddNewPost(CreatePostDto post); //  Sygnatura funkcji dodania nowego posta 
+
+        
     }
 }

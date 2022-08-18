@@ -11,10 +11,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace WebAPI
 {
@@ -50,7 +52,17 @@ namespace WebAPI
 
 
             services.AddControllers();
-          
+
+            services.AddSwaggerGen(c =>
+            {
+                c.EnableAnnotations();
+                c.SwaggerDoc(name: "v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
+            });
+
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +72,17 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                
+                c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "WebAPI v1");
+                
+            });
+
+            
 
             app.UseHttpsRedirection();
 

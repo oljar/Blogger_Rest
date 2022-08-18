@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace WebAPI.Controllers
 {
@@ -13,12 +14,15 @@ namespace WebAPI.Controllers
         {
             _postService = postService;
         }
-        
+
 
         /// <summary>
         /// zwraca listę wszystkich postów - json
         /// </summary>
         /// <returns></returns>
+
+
+        [SwaggerOperation(Summary = "Retrives a specific post by unique id")]
         [HttpGet]
         public IActionResult Get() 
         {
@@ -26,7 +30,7 @@ namespace WebAPI.Controllers
             var posts = _postService.GetAllPosts();
             return Ok(posts);
         }
-
+        [SwaggerOperation(Summary = "Retrives a specific post by uniquw id")]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
