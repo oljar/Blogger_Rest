@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Dto;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -9,12 +10,15 @@ namespace WebAPI.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
+
+        // poniżej został wstrzyknięty obiekt PostService i przypisany do prywatnej klasy  zmiennej kontrolera
         private readonly IPostService _postService;
         public PostsController(IPostService postService)
         {
             _postService = postService;
+            
         }
-
+       
 
         /// <summary>
         /// zwraca listę wszystkich postów - json
@@ -28,6 +32,8 @@ namespace WebAPI.Controllers
         {
 
             var posts = _postService.GetAllPosts();
+           
+
             return Ok(posts);
         }
         [SwaggerOperation(Summary = "Retrives a specific post by uniquw id")]
@@ -41,9 +47,16 @@ namespace WebAPI.Controllers
             }
             return Ok(post);
         }
+        [SwaggerOperation(Summary = "Create a new post")]
+        [HttpPost]
 
+        public IActionResult Create (CreatePostDto newPost)
+        {
+            var post = _postService.AddNewPost(newPost);
+            return Created($"api/posts/{post.Id}", post);
+        }
 
-
+        // jeśli zostanie wysłane żądanie HTTP typu Post pod adres api/posts/{post.Id}  to wywoła się metoda Create z klasy PostController 
 
     }
 }

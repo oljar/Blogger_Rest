@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teoria", "teoria", "{BAE21B
 		teoria\2_3_3 Application - Automapper.md = teoria\2_3_3 Application - Automapper.md
 		teoria\2_4 WebAPI  -  controllers  -  PostController.md = teoria\2_4 WebAPI  -  controllers  -  PostController.md
 		teoria\2_5 Swagger.md = teoria\2_5 Swagger.md
+		teoria\2_6 metoda POST.md = teoria\2_6 metoda POST.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6BA35FF4-17D0-4337-8A77-AB4E685E2CF0}"
