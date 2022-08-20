@@ -62,5 +62,11 @@ namespace Application.Services
             _postRepository.Update(post);
 
         }
+
+        public void DeletePost(int id)
+        {
+            var post = _postRepository.GetById(id);
+            _postRepository.Delete(post);
+        }
     }
 }

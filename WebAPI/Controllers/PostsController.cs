@@ -68,8 +68,14 @@ namespace WebAPI.Controllers
             //kod odpowiedzi 204
         }
 
-     
-
+        [SwaggerOperation(Summary = "Delete a specific post")]
+        [HttpDelete("{id}")]
+        public IActionResult Delete (int id)
+        {
+            _postService.DeletePost(id);
+            return NoContent();
+            // zwracamy kod 204 no conntent
+        }
 
     }
 }
