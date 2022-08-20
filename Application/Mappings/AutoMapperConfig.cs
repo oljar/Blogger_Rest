@@ -19,6 +19,8 @@ namespace Application.Mappings
                 cfg.CreateMap<Post, PostDto>();
 
                 cfg.CreateMap<CreatePostDto, Post>();
+                cfg.CreateMap<UpdatePostDto, Post>();
+
             
             
             })

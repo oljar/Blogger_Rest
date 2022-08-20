@@ -27,6 +27,6 @@ namespace Application.Interfaces
 
         PostDto AddNewPost(CreatePostDto post); //  Sygnatura funkcji dodania nowego posta 
 
-
+        void UpdatePost(UpdatePostDto updatePost);
     }
 }

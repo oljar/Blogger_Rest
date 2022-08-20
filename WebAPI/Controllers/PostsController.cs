@@ -57,6 +57,19 @@ namespace WebAPI.Controllers
         }
 
         // jeśli zostanie wysłane żądanie HTTP typu Post pod adres api/posts/{post.Id}  to wywoła się metoda Create z klasy PostController 
+        // zwracany kod 201
+
+        [SwaggerOperation(Summary ="Update a existing post")]
+        [HttpPut]
+        public IActionResult Update (UpdatePostDto updatePost)
+        {
+            _postService.UpdatePost(updatePost);
+            return NoContent();
+            //kod odpowiedzi 204
+        }
+
+     
+
 
     }
 }
