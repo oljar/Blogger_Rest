@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using WebAPI.Installers;
 
 namespace WebAPI
 {
@@ -32,33 +32,14 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPostRepository, PostRepository>();
-            /*
-             Dzêki temu framework ASP.net Core  bêdzie wiedzia³ ¿e jeœli gdziekolwiek na wejœciu np.w parametrze konstruktora
-             dotanie interfejs IPostRepository to automatycznie przypisze implementacje klasy PostRepository. 
-
-             */
-            services.AddScoped<IPostService, PostService>();
 
 
-            /* 
-             Metoda AddSingleton zapewni nam ¿e implementacja interfejsu  bêdzie tworzona tylko jeden raz na samym pocz¹tku
-             jako argument przekazujemy instancjê konfiguracji automappera. 
-             Framework Asp.Net Core bêdzie wiedzia³ ¿e jeœli gdziekolwiek  na wejœciu np w parametrze kostruktora dostanie 
-             interfejs IMapper to wstrzyknie implementacjê pochodz¹c¹ z klasy AutoMapperConfig.
-             */
-
-            services.AddSingleton(AutoMapperConfig.Initialize());
 
 
-            services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.EnableAnnotations();
-                c.SwaggerDoc(name: "v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
-            });
 
+
+            services.InstallServicesInAssembly(Configuration);
 
 
 

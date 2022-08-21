@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         /// <returns></returns>
 
 
-        [SwaggerOperation(Summary = "Retrives a specific post by unique id")]
+        [SwaggerOperation(Summary = "Retrives all posts")]
         [HttpGet]
         public IActionResult Get() 
         {

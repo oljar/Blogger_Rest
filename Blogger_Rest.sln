@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teoria", "teoria", "{BAE21B
 	ProjectSection(SolutionItems) = preProject
 		teoria\1_5 Omówienie standardu REST.md = teoria\1_5 Omówienie standardu REST.md
 		teoria\2.2.1 Architektura aplikacji - Domain.md = teoria\2.2.1 Architektura aplikacji - Domain.md
+		teoria\2_10  Mapowanie.md = teoria\2_10  Mapowanie.md
 		teoria\2_2 Architektura aplikacji-teoria.md = teoria\2_2 Architektura aplikacji-teoria.md
 		teoria\2_2_2 Infrastructure - Repository .md = teoria\2_2_2 Infrastructure - Repository .md
 		2_3_1 Application - Interfaces.md = 2_3_1 Application - Interfaces.md
@@ -19,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teoria", "teoria", "{BAE21B
 		teoria\2_6 metoda POST.md = teoria\2_6 metoda POST.md
 		teoria\2_7 metoda_PUT.md = teoria\2_7 metoda_PUT.md
 		teoria\2_8 metoda Delete.md = teoria\2_8 metoda Delete.md
+		teoria\2_9  Wstrzykiwanie zależności _ rejestracja serwisów.md = teoria\2_9  Wstrzykiwanie zależności _ rejestracja serwisów.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6BA35FF4-17D0-4337-8A77-AB4E685E2CF0}"
